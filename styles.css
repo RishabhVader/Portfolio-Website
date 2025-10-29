@@ -63,8 +63,9 @@ body {
 }
 
 .content {
-  margin-top: 80px; /* fixed spacing under header */
-  padding: 40px 32px;
+  /* Replaced margin-top + padding with a single top padding offset */
+  padding: 112px 32px 40px; /* 112 = header height (~72) + 40 breathing */
+  margin-top: 0;
   flex: 1;
 }
 
@@ -141,6 +142,9 @@ h1.title {
   text-align: center;
 }
 
+/* prevent UA default top margins from re-introducing extra gap */
+.page .title { margin-top: 0; }
+
 h2 {
   font-family: 'Khand', sans-serif;
   font-weight: 600;
@@ -189,17 +193,14 @@ li {
 }
 
 .contImg img {
-  width: 100%;          
-  height: auto;         
-  border-radius: 5px;   
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
   border: 2px solid black;
   margin-top: 32px;
-  display: block;       
-  box-sizing: border-box; 
+  display: block;
+  box-sizing: border-box;
 }
-
-
-
 
 .contentBlock:hover,
 .contentBlock--left:hover {
@@ -277,7 +278,7 @@ li {
   column-gap: 16px;
   width: 100%;
   margin: 60px auto;
-  max-width: 1200px;        /* prevents columns from stretching too far apart */
+  max-width: 1200px;
 }
 
 .content-row .contentBlock {
@@ -285,11 +286,10 @@ li {
   width: 100%;
   margin: 0 0 16px;
   break-inside: avoid;
-  -webkit-column-break-inside: avoid; /* Safari fix */
-  -moz-column-break-inside: avoid;    /* Firefox fix */
-  vertical-align: top;                /* keeps blocks aligned at top of each column */
+  -webkit-column-break-inside: avoid;
+  -moz-column-break-inside: avoid;
+  vertical-align: top;
 }
-
 
 .profileImg {
   width: 200px;
@@ -326,7 +326,8 @@ li {
    10. Contact Section
 -------------------------------- */
 .contactRow {
-  margin-top: 40px;
+  /* trimmed from 64px inline to a consistent class value */
+  margin-top: 24px;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -343,10 +344,10 @@ li {
 }
 
 .contactImg img:hover {
-    background-color: #E2C044;
+  background-color: #E2C044;
   transform: translateY(-6px);
   box-shadow: 0 8px 16px rgba(0,0,0,0.25);
 }
 
-
-
+/* Contact-specific trims for vertical rhythm */
+.page[data-page="contact"] .contentBlock { margin-top: 16px; }
