@@ -64,13 +64,13 @@ body {
 
 .content {
   /* Replaced margin-top + padding with a single top padding offset */
-  padding: 112px 32px 40px; /* 112 = header height (~72) + 40 breathing */
+  padding: 112px 32px 40px; 
   margin-top: 0;
   flex: 1;
 }
 
 section.page {
-  margin-bottom: 80px; /* space between page sections */
+  margin-bottom: 80px; 
 }
 
 /* -------------------------------
@@ -142,7 +142,6 @@ h1.title {
   text-align: center;
 }
 
-/* prevent UA default top margins from re-introducing extra gap */
 .page .title { margin-top: 0; }
 
 h2 {
@@ -349,5 +348,9 @@ li {
   box-shadow: 0 8px 16px rgba(0,0,0,0.25);
 }
 
-/* Contact-specific trims for vertical rhythm */
 .page[data-page="contact"] .contentBlock { margin-top: 16px; }
+
+.page[hidden] { display: none !important; }
+
+html, body { margin: 0; padding: 0; }
+
