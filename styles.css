@@ -63,11 +63,12 @@ body {
 }
 
 .content {
-  /* Replaced margin-top + padding with a single top padding offset */
-  padding: 112px 32px 40px; 
-  margin-top: 0;
-  flex: 1;
+  height: auto !important;
+  min-height: auto !important; 
+  margin: 0 !important;
+  padding: 0 !important;
 }
+
 
 section.page {
   margin-bottom: 80px; 
