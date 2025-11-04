@@ -326,7 +326,6 @@ li {
    10. Contact Section
 -------------------------------- */
 .contactRow {
-  /* trimmed from 64px inline to a consistent class value */
   margin-top: 24px;
   display: flex;
   align-items: center;
